@@ -19,10 +19,17 @@ class BasePage:
         self.driver.get(url)
 
     def js_click_element_by_locator(self, locator):
-        WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(locator))
-        button = self.driver.find_element(*locator)
+        button = self.wait_and_find_element(locator)
         self.driver.execute_script("arguments[0].click();", button)
 
     def click_element_by_locator(self, locator):
-        WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located(locator))
-        self.driver.find_element(*locator).click()
+        click_element = self.wait_and_find_element(locator)
+        click_element.click()
+
+    def is_current_url_contains(self, url):
+        WebDriverWait(self.driver, 10).until(expected_conditions.url_contains(url))
+        return url in self.driver.current_url
+
+    def choose_second_tab(self):
+        WebDriverWait(self.driver, 10).until(expected_conditions.number_of_windows_to_be(2))
+        self.driver.switch_to.window(self.driver.window_handles[1])

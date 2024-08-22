@@ -8,27 +8,19 @@
 6. Команда для формирования отчета в виде web-страницы — allure serve allure_results.
 
 ## Описание файлов с тестами
-### В папке locators два файла locators_base_page.py и order_page_locators.py 
-* locators_base_page.py - локаторы для главной страницы 
-* order_page_locators.py -  локаторы для страницы заказа
+### В папке locators два файла locators_main_page.py и locators_order_page.py 
+* locators_main_page.py - локаторы для главной страницы 
+* locators_order_page.py -  локаторы для страницы заказа
 
-### В папке pages файлы base_page.py и order_page.py
-#### base_page.py (главная страница):
+### В папке pages файлы base_page.py, main_page.py и order_page.py
+#### base_page.py (прототип страниц):
 * wait_and_find_element - ожидание элемента на странице и возвращение этого элемента
 * wait_text_and_find_element - ожидание элемента с нужным текстом и возвращение этого элемента
 * open_page - открывает страницу по переданному адресу
 * js_click_element_by_locator - клик по элементу с помощью JavaScript
 * click_element_by_locator - клик по элементу
-
-#### order_page (страница заказа):
-* set_name - заполняет поле 'Имя'
-* set_surname - заполняет поле 'Фамилия'
-* set_address - заполняет поле 'Адрес'
-* set_metro - выбрать станцию метро
-* set_phone - заполняет поле 'Номер телефона'
-* set_all_fields - объединение методов выше в один шаг
-* set_date - выбрать дату
-* set_rental_period - выбрать период аренды
+* is_current_url_contains - проверка, содержит ли текущий url подстроку
+* choose_second_tab - переход на вторую вкладку
 
 ### В папке tests файлы test_click_lists_base_page.py и test_order_scooter.py
 #### test_click_lists_base_page.py (проверка "Вопросы о важном")

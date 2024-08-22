@@ -1,4 +1,4 @@
-from locators.order_page_locators import ButtonsOrder
+from locators.locators_order_page import LocatorsOrder
 
 
 class URLS:
@@ -10,8 +10,8 @@ class URLS:
 class DatasOrder:
     parameters = 'locator_button, name, surname, address, metro_option, phone, date, rental_option'
     values = [
-        [ButtonsOrder.UP_ORDER_BUTTON,'Иван', 'Иванов', 'ул. Пушкина', '2', '12345678912', '27.08.2024', '2'],
-        [ButtonsOrder.UNDER_ORDER_BUTTON, 'Петр', 'Петров', 'ул. Маяковского', '4', '98765432113', '28.08.2024', '3']
+        [LocatorsOrder.UP_ORDER_BUTTON, 'Иван', 'Иванов', 'ул. Пушкина', '2', '12345678912', '27.08.2024', '2'],
+        [LocatorsOrder.UNDER_ORDER_BUTTON, 'Петр', 'Петров', 'ул. Маяковского', '4', '98765432113', '28.08.2024', '3']
     ]
 
 
